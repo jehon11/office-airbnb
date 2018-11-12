@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'officespaces#index'
+  resources :officespaces do
+    resources :reservations, only: [:new, :create]
+  end
+  get 'profile', to: 'pages#profile'
+  resources :reservations, only: [:delete]
 end
+# branching test
