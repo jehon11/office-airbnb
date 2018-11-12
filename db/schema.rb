@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_072759) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "officespaces", force: :cascade do |t|
+  create_table "office_spaces", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.text "description"
@@ -25,18 +25,18 @@ ActiveRecord::Schema.define(version: 2018_11_12_072759) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_officespaces_on_user_id"
+    t.index ["user_id"], name: "index_office_spaces_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "officespace_id"
+    t.bigint "office_space_id"
     t.date "check_in"
     t.date "check_out"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["officespace_id"], name: "index_reservations_on_officespace_id"
+    t.index ["office_space_id"], name: "index_reservations_on_office_space_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_11_12_072759) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "officespaces", "users"
-  add_foreign_key "reservations", "officespaces"
+  add_foreign_key "office_spaces", "users"
+  add_foreign_key "reservations", "office_spaces"
   add_foreign_key "reservations", "users"
 end
