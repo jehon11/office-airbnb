@@ -13,8 +13,9 @@ class OfficeSpacesController < ApplicationController
 
   def create
     @office_space = OfficeSpace.new(office_space_params)
+    @office_space.owner = User.first
     if @office_space.save
-      redirect_to office_space_path(@office_space)
+      redirect_to office_spaces_path
     else
       render :new
     end
@@ -47,4 +48,3 @@ class OfficeSpacesController < ApplicationController
     params.require(:office_space).permit(:name, :address, :description, :price, :photo, :nearest_station)
   end
 end
-
