@@ -1,12 +1,20 @@
 <h1>OfficeSpaces#index</h1>
-<p>Find me in app/views/office_spaces/index.html.erb</p>
 <% @office_spaces.each do |office_space| %>
-<li>
-  <%= office_space.name %>
-  <%= cl_image_tag office_space.photo, height: 300, width: 400, crop: :fill %>
-</li>
+<h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
+<h3><%= office_space.address %></h3>
+<h3> Description</h3>
+<%= cl_image_tag office_space.photo, height: 300, width: 400, crop: :fill %>
+<p>
+  <%=  office_space.description%>
+</p>
+<h3>Price :</h3>
+<p>
+  <%= office_space.price %> USD
+</p>
 <% end %>
-<%= link_to "add new office space", new_office_space_path %>
+<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+<p>Find me in app/views/office_spaces/index.html.erb</p>
+
 <p>
   <span id="banner-typed-text"></span>
 </p>
