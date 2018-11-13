@@ -2,15 +2,15 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <%= image_tag "logo.png", height: 50 %>
-    <span id="banner-typed-text"></span>
-
+  <span id="banner-typed-text"></span>
   <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? %>
     <!-- Links when logged in -->
-    <%= link_to "Browse", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Reservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Browse", office_spaces_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "My Offices", my_offices_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Reservations", my_reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">

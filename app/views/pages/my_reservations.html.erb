@@ -1,0 +1,6 @@
+<h1>My Reservations</h1>my
+<p>Find me in app/views/pages/my_reservations.html.erb</p>
+<% @reservations.each do |reservation| %>
+<%= reservation.check_in %>
+<%= reservation.check_out %>
+<% end %>
