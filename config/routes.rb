@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
   devise_for :users
   root to: 'office_spaces#index'
   resources :office_spaces do

@@ -40,10 +40,4 @@
     </ul>
   </div>
 </div>
-<%= simple_form_for [@office_space, @reservation] do |f| %>
-<%= f.input :check_in%>
-<%= f.input :check_out%>
-<%= button_tag( :class => "button") do %>
-<i class="fas fa-plus-circle"></i> Add Reservation
-<% end %>
-<% end %>
+<h2><%= link_to "Reserve!", new_office_space_reservation_path(@office_space)%></h2>

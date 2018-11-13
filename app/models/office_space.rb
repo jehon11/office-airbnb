@@ -3,5 +3,6 @@ class OfficeSpace < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
   has_many :users, through: :reservations
+  has_many :reviews
   validates :owner, :name, :price, :address, presence: true
 end
