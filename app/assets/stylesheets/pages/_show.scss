@@ -34,9 +34,13 @@
 }
 
 .btn-treehouse {
+  display:block;
+  text-align: center;
+  margin-top:150px;
   color: white;
   padding: 10px 15px;
-  width: 500px;
+  width: 200px;
+  padding:6px 0;
   background: #E7D28A;
   transition: background 0.3s ease;
 }
@@ -45,4 +49,10 @@
   background: #E3C662;
   text-decoration: none;
   color: white;
+}
+
+#list {
+  list-style-type: none;
+  align-content: left;
+  padding: 0;
 }

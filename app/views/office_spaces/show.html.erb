@@ -19,14 +19,21 @@
 <!-- office info -->
 <div class="container">
   <div class="row">
-    <h2><%= @office_space.name %></h2>
-    <ul>
-      <li><%= @office_space.address %></li>
-      <li><%= @office_space.description %></li>
-      <li><%= @office_space.nearest_station %></li>
-      <li><%= @office_space.owner %></li>
-      <li><%= @office_space.price %></li>
-    </ul>
-    <a href="#" class="btn-treehouse">BOOK</a>
+    <div class="col-md-8"> <!-- left box -->
+      <h3><%= @office_space.name %></h3>
+      <ul id="list">
+        <li><%= @office_space.address %></li>
+        <br>
+        <li><%= @office_space.description %></li>
+        <br>
+        <li>Nearest Station: <%= @office_space.nearest_station %></li>
+        <br>
+        <li>Host: <%= @office_space.owner %></li>
+      </ul>
+    </div>
+    <div class="col-md-4" style="text-align:right; margin-top:60px;"> <!-- right box -->
+      <h4><%= @office_space.price %>$ </h4>
+      <a href="#" class="btn-treehouse pull-right">BOOK</a>
+    </div>
   </div>
 </div>

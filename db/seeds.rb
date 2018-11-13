@@ -11,12 +11,13 @@ OfficeSpace.destroy_all
 
 User.destroy_all
 
-user = User.create!(email: "hi@email.com", password: "123456")
+user1 = User.create!(email: "hi@email.com", password: "123456")
 user2 = User.create!(email: "hello@email.com", password: "123456")
 
-office = OfficeSpace.create!(name: "Cool office at Tokyo station", address: "tokyo", description: "amazing space", price: 10000, owner: user)
+office_1 = OfficeSpace.create!(name: "Prudential Plaza 10F", address: "Chioda, Tokyo", description: "Host 8 people group meeting and jam sessions. Space has the power to unlock potential — in our teams and in ourselves. Our workspaces blend intentional design, warm hospitality, and flexibility so you and your team can do your best work.
+", price: 2400, owner: user1)
 office_2 = OfficeSpace.create!(name: "Meguro free space", address: "Meguro-Ku", description: "cozy office in central Tokyo", price: 5000, owner: user2)
 
 
-reservation = Reservation.create!(user: user, office_space: office, check_in: Date.parse("Dec 8 2018"), check_out: Date.parse("Dec 8 2019"))
+reservation1 = Reservation.create!(user: user1, office_space: office, check_in: Date.parse("Dec 8 2018"), check_out: Date.parse("Dec 8 2019"))
 reservation2 = Reservation.create!(user: user2, office_space: office, check_in: Date.parse("Dec 10 2018"), check_out: Date.parse("Dec 8 2019"))
