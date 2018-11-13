@@ -47,5 +47,3 @@ class OfficeSpacesController < ApplicationController
     params.require(:office_space).permit(:name, :address, :description, :price, :photo, :nearest_station)
   end
 end
-
-end
