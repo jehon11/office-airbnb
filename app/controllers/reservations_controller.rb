@@ -1,13 +1,13 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.where(user: current_user)
+     @reservations = policy_scope(Reservation)
   end
 
   def new
     @office_space = OfficeSpace.find(params[:office_space_id])
-    authorize @office_space
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
@@ -15,6 +15,7 @@ class ReservationsController < ApplicationController
     @office_space = OfficeSpace.find(params[:office_space_id])
     @reservation.office_space = @office_space
     @reservation.user = current_user
+    authorize @reservation
     if @reservation.save
       redirect_to reservations_path
     else

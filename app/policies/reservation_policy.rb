@@ -1,32 +1,40 @@
-class OfficeSpacePolicy < ApplicationPolicy
+class ReservationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
   end
 
-  def new?
-    true
-  end
 
   def show?
     true
+  end
+
+  def new?
+    true #all users can create a officespace
+  end
+
+  def show?
+  true
   end
 
   def create?
     true
   end
 
+
   def edit
-    record.user == user
+    true
   end
 
   def update
-    record.owner == user
+    true
   end
 
   def destroy
-    record.owner == user
+    true
   end
+
+
 
 end

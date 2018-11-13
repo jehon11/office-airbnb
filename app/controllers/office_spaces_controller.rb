@@ -4,11 +4,13 @@ class OfficeSpacesController < ApplicationController
 
   def index
     @office_spaces = policy_scope(OfficeSpace)
+
   end
 
   def show
     @office_space = OfficeSpace.find(params[:id])
     @review = Review.new
+    authorize @office_space
   end
 
   def new
@@ -36,6 +38,7 @@ class OfficeSpacesController < ApplicationController
   def update
     @office_space = OfficeSpace.find(params[:id])
     authorize @office_space
+
     if @office_space.update(office_space_params)
       redirect_to office_space_path(@office_space)
     else
@@ -46,15 +49,12 @@ class OfficeSpacesController < ApplicationController
   def destroy
     @office_space = OfficeSpace.find(params[:id])
     authorize @office_space
+
     @office_space.destroy
     redirect_to office_spaces_path
   end
 
   private
-
-
-
-
 
   def office_space_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
