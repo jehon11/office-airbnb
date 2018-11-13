@@ -1,0 +1,14 @@
+<h3><%= link_to "Go Back", office_spaces_path  %></h3>
+<%= current_user.email  %>
+<% @reservations.each_with_index do |reservation, index| %>
+<h3><%= index %></h3>
+<li>
+  <%= reservation.check_in %>
+</li>
+<li>
+  <%= reservation.check_out %>
+</li>
+<li>
+  <%= reservation.user.email %>
+</li>
+<% end %>
