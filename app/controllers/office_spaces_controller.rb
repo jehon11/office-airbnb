@@ -1,4 +1,6 @@
 class OfficeSpacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @office_spaces = OfficeSpace.all
   end
