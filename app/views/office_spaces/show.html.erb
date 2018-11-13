@@ -1,20 +1,8 @@
 <!-- office photo -->
 <div class="photo-container">
-  <div class="row big-box">
-    <div class="grid">
-      <div class="element1">
-        <%= @office_space.photo %>
-      </div>
-      <div class="element2">
-        <%= @office_space.photo %>
-      </div>
-      <div class="element3">
-        <%= @office_space.photo %>
-      </div>
-    </div>
+  <div class="office_banner" style="background-image: url(<%= cl_image_path(@office_space.photo) %>);">
   </div>
-</div>
-<!-- office info -->
+</div><!-- office info -->
 <div class="container">
   <div class="row">
     <div class="col-md-8">
