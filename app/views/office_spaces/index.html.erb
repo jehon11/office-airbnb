@@ -1,2 +1,15 @@
 <h1>OfficeSpaces#index</h1>
+<% @office_spaces.each do |office_space| %>
+<h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
+<h3><%= office_space.address %></h3>
+<h3> Description</h3>
+<p>
+  <%=  office_space.description%>
+</p>
+<h3>Price :</h3>
+<p>
+  <%= office_space.price %> USD
+</p>
+<% end %>
+<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
 <p>Find me in app/views/office_spaces/index.html.erb</p>

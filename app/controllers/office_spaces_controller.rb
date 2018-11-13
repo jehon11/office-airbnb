@@ -48,4 +48,3 @@ class OfficeSpacesController < ApplicationController
   end
 end
 
-end
