@@ -3,11 +3,10 @@
 <% @office_spaces.each do |office_space| %>
 <li>
   <%= office_space.name %>
+  <%= cl_image_tag office_space.photo, height: 300, width: 400, crop: :fill %>
 </li>
 <% end %>
 <%= link_to "add new office space", new_office_space_path %>
-
 <p>
   <span id="banner-typed-text"></span>
 </p>
-
