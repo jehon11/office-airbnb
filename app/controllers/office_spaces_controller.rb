@@ -5,6 +5,7 @@ class OfficeSpacesController < ApplicationController
 
   def show
     @office_space = OfficeSpace.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -13,7 +14,7 @@ class OfficeSpacesController < ApplicationController
 
   def create
     @office_space = OfficeSpace.new(office_space_params)
-    @office_space.owner = User.first
+    @office_space.owner = current_user
     if @office_space.save
       redirect_to office_spaces_path
     else

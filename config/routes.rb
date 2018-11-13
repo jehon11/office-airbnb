@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
   get 'profile', to: 'pages#profile'
-  resources :reservations, only: [:delete]
+  resources :reservations, only: [:delete, :index]
 end
