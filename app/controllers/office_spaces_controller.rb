@@ -46,6 +46,5 @@ class OfficeSpacesController < ApplicationController
     # Never trust user data!
     params.require(:office_space).permit(:name, :address, :description, :price, :photo, :nearest_station)
   end
-end
 
 end
