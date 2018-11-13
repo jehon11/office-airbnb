@@ -1,10 +1,13 @@
 class OfficeSpacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @office_spaces = OfficeSpace.all
   end
 
   def show
     @office_space = OfficeSpace.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -13,7 +16,7 @@ class OfficeSpacesController < ApplicationController
 
   def create
     @office_space = OfficeSpace.new(office_space_params)
-    @office_space.owner = User.first
+    @office_space.owner = current_user
     if @office_space.save
       redirect_to office_spaces_path
     else

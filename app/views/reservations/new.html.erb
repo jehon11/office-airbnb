@@ -1,2 +1,11 @@
 <h1>Reservations#new</h1>
 <p>Find me in app/views/reservations/new.html.erb</p>
+
+<h3><%= link_to "Go Back", office_space_path(@office_space)  %></h3>
+<%= simple_form_for [@office_space, @reservation] do |f| %>
+<%= f.input :check_in%>
+<%= f.input :check_out%>
+<%= button_tag( :class => "button") do %>
+<i class="fas fa-plus-circle"></i> Add Reservation
+<% end %>
+<% end %>
