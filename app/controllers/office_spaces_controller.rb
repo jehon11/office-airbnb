@@ -1,11 +1,13 @@
 class OfficeSpacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @office_spaces = OfficeSpace.all
   end
 
   def show
     @office_space = OfficeSpace.find(params[:id])
-    @reservation = Reservation.new
+    @review = Review.new
   end
 
   def new
