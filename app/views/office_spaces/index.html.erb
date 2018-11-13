@@ -1,10 +1,5 @@
-
 <%= render 'shared/navbar' %>
-                       
-<h1>OfficeSpaces#index</h1>
-<h3><%= link_to "see my reservations", reservations_path %></h3>
-<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
-<h3>current user:<%= current_user.email %></h3>
+<%= render 'shared/banner' %>
 <% @office_spaces.each do |office_space| %>
 <h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
 <h3><%= office_space.address %></h3>
@@ -17,9 +12,11 @@
 <p>
   <%= office_space.price %> USD
 </p>
-
 <% end %>
 <p>Find me in app/views/office_spaces/index.html.erb</p>
 <p>
   <span id="banner-typed-text"></span>
 </p>
+<h3><%= link_to "see my reservations", reservations_path %></h3>
+<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+<h3>current user:<%= current_user.email %></h3>

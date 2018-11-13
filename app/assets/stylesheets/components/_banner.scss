@@ -1,18 +1,21 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 90vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-position: bottom;
+  background: linear-gradient (-225deg, rgba(0, 101, 168, 0.6) 0%, rgba(0, 36, 61, 0.6) 50%)
 }
 
-.banner h1 {
+.banner h2 {
   font-size: 50px;
-  font-weight: bold;
+  // font-weight: lighter;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: rgb(180, 147, 53);
 }
 
 .banner p {
