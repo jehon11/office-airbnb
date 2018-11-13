@@ -1,24 +1,34 @@
 <%= render 'shared/banner' %>
-<h1>OfficeSpaces#index</h1>
-<h3><%= link_to "see my reservations", reservations_path %></h3>
-<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
 <% @office_spaces.each do |office_space| %>
-<h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
-<h3><%= office_space.address %></h3>
-<h3> Description</h3>
-<%= cl_image_tag office_space.photo, height: 300, width: 400, crop: :fill %>
-<p>
-  <%=  office_space.description%>
-</p>
-<h3>Price :</h3>
-<p>
-  <%= office_space.price %> USD
-</p>
-<% end %>
-<p>Find me in app/views/office_spaces/index.html.erb</p>
-<p>
-  <span id="banner-typed-text"></span>
-</p>
-<h3><%= link_to "see my reservations", reservations_path %></h3>
-<h3><%= link_to "Add a new office space", new_office_space_path %></h3>
-<h3>current user:<%= current_user.email %></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <!-- insert <div class="card"> -->
+      <% if office_space.photo.file %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
+        <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?office');">
+          <% end %>
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
+            <p>
+              <%= office_space.address %>
+            </p>
+            <p>
+              <%= office_space.price %> USD</p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <p>Find me in app/views/office_spaces/index.html.erb</p>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <h3><%= link_to "see my reservations", reservations_path %></h3>
+    <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+    <h3>current user:<%= current_user.email %></h3>
