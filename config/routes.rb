@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get 'my_reservations', to: 'pages#my_reservations', as: :my_reservations
   get 'my_offices', to: 'pages#my_offices', as: :my_offices
 
-  resources :reservations, only: [:delete, :index]
+  resources :reservations
 end

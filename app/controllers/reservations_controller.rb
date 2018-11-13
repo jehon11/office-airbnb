@@ -21,6 +21,16 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    if @reservation.user == current_user
+      redirect_to reservations_path
+    else
+      redirect_to my_office_path
+    end
+  end
+
   def reservation_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
