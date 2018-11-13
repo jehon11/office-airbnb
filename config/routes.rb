@@ -7,4 +7,3 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   resources :reservations, only: [:delete]
 end
-# branching test

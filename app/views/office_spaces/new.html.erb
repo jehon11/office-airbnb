@@ -1,2 +1,15 @@
 <h1>OfficeSpaces#new</h1>
 <p>Find me in app/views/office_spaces/new.html.erb</p>
+<div class="container">
+  <div class="form">
+    <h1>Add a office space</h1>
+    <%= simple_form_for @office_space do |f| %>
+    <%= f.input :name%>
+    <%= f.input :address%>
+    <%= f.input :price%>
+    <%= button_tag( :class => "button") do %>
+    <i class="fas fa-plus-circle"></i> Add Office Space
+    <% end %>
+    <% end %>
+  </div>
+</div>
