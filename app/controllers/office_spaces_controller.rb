@@ -7,7 +7,6 @@ class OfficeSpacesController < ApplicationController
 
   def show
     @office_space = OfficeSpace.find(params[:id])
-    @reservation = Reservation.new
   end
 
   def new
