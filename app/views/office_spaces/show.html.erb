@@ -1,2 +1,30 @@
-<h1>OfficeSpaces#show</h1>
-<p>Find me in app/views/office_spaces/show.html.erb</p>
+<div class="photo-container">
+  <div class="row big-box">
+    <div class="grid">
+      <div class="element1">
+        <%= @office_space.photo %>
+      </div>
+      <div class="element2">
+        <%= @office_space.photo %>
+      </div>
+      <div class="element3">
+        <%= @office_space.photo %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <h1>OfficeSpaces#show</h1>
+<p>Find me in app/views/office_spaces/show.html.erb</p> -->
+<div class="container">
+  <div class="row">
+    <h1><%= @office_space.name %></h1>
+
+    <ul>
+          <li><%= @office_space.address %></li>
+          <li><%= @office_space.description %></li>
+          <li><%= @office_space.nearest_station %></li>
+          <li><%= @office_space.owner %></li>
+          <li><%= @office_space.price %></li>
+    </ul>
+  </div>
+</div>
