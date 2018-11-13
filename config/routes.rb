@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'office_spaces#index'
   resources :office_spaces do
@@ -8,4 +7,3 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   resources :reservations, only: [:delete]
 end
-# branching test
