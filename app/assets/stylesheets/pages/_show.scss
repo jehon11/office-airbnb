@@ -1,6 +1,6 @@
 .big-box {
   display: flex;
-  height: 400px;
+  height: 500px;
   background-color: gray;
 }
 
@@ -43,8 +43,30 @@
   padding:6px 0;
   background: #E7D28A;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 .btn-treehouse:hover {
+  opacity: 1;
+  background: #E3C662;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-review {
+  display:block;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  color: white;
+  padding: 10px 15px;
+  width: 200px;
+  padding:6px 0;
+  background: #E7D28A;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-review:hover {
   opacity: 1;
   background: #E3C662;
   text-decoration: none;
@@ -56,3 +78,16 @@
   align-content: left;
   padding: 0;
 }
+
+.cards-container {
+  margin-top: 100px;
+}
+
+.add-review-form {
+  padding: 0 100px;
+}
+
+
+
+
+

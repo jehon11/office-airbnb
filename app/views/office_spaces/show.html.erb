@@ -27,15 +27,17 @@
         <br>
         <li>Nearest Station: <%= @office_space.nearest_station %></li>
         <br>
-        <li>Host: <%= @office_space.owner %></li>
+        <li>Host: <%= @office_space.owner.email %></li>
       </ul>
     </div>
     <div class="col-md-4" style="text-align:right; margin-top:60px;"> <!-- right box -->
       <h4><%= @office_space.price %>$ </h4>
-      <a href="#" class="btn-treehouse pull-right">BOOK</a>
+      <%= link_to "BOOK", new_office_space_reservation_path(@office_space), class: "btn-treehouse pull-right"%>
     </div>
   </div>
 </div>
+
+<!-- office review -->
 <div class="cards-container">
   <div class="row">
     <% @office_space.reviews.each do |review| %>
@@ -58,9 +60,8 @@
   <%= simple_form_for [@office_space, @review] do |f| %>
   <%= f.input :comment, placeholder: 'Awesome workspace!' %>
   <%= f.input :rating, collection: [1,2,3,4,5], required: false %>
-  <%= button_tag( class: "button") do %>
-  <i class="fas fa-plus-circle"></i> Add a Review
+  <%= button_tag( class: "btn-review") do %>
+    Submit Review
   <% end %>
   <% end %>
 </div>
-<h2><%= link_to "Reserve!", new_office_space_reservation_path(@office_space)%></h2>
