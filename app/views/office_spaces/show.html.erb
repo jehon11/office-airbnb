@@ -1,2 +1,10 @@
 <h1>OfficeSpaces#show</h1>
 <p>Find me in app/views/office_spaces/show.html.erb</p>
+<h2>Make a reservation</h2>
+<%= simple_form_for [@office_space, @reservation] do |f| %>
+<%= f.input :check_in%>
+<%= f.input :check_out%>
+<%= button_tag( :class => "button") do %>
+<i class="fas fa-plus-circle"></i> Add Office Space
+<% end %>
+<% end %>
