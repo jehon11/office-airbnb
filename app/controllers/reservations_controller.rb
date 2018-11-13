@@ -1,7 +1,4 @@
 class ReservationsController < ApplicationController
-  def index
-    @reservations = Reservation.where(user: current_user)
-  end
 
   def new
     @office_space = OfficeSpace.find(params[:office_space_id])
