@@ -9,7 +9,8 @@
         <% else %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?office');">
           <% end %>
-          <div class="card-category"></div>
+          <div class="card-category">
+          </div>
           <div class="card-description">
             <h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
             <p>
@@ -18,18 +19,15 @@
             <p>
               <%= office_space.price %> USD</p>
           </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-
-          </div>
         </div>
-        <% end %>
       </div>
+      <% end %>
     </div>
-    <p>Find me in app/views/office_spaces/index.html.erb</p>
-    <p>
-      <span id="banner-typed-text"></span>
-    </p>
-    <h3><%= link_to "see my reservations", reservations_path %></h3>
-    <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
-    <h3>current user:<%= current_user.email %></h3>
-
+  </div>
+  <p>Find me in app/views/office_spaces/index.html.erb</p>
+  <p>
+    <span id="banner-typed-text"></span>
+  </p>
+  <h3><%= link_to "see my reservations", reservations_path %></h3>
+  <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+  <h3>current user:<%= current_user.email %></h3>
