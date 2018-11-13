@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :office_space, foreign_key: true
       t.text :comment
+      t.integer :rating
 
       t.timestamps
     end

@@ -40,4 +40,31 @@
     </ul>
   </div>
 </div>
+<div class="cards-container">
+  <div class="row">
+    <% @office_space.reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-review">
+        <div class="stars">
+          <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+        <div class="comment">
+          <%= review.comment %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="add-review-form">
+  <%= simple_form_for [@office_space, @review] do |f| %>
+  <%= f.input :comment, placeholder: 'Awesome workspace!' %>
+  <%= f.input :rating, collection: [1,2,3,4,5], required: false %>
+  <%= button_tag( class: "button") do %>
+  <i class="fas fa-plus-circle"></i> Add a Review
+  <% end %>
+  <% end %>
+</div>
 <h2><%= link_to "Reserve!", new_office_space_reservation_path(@office_space)%></h2>

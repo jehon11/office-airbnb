@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_052836) do
     t.bigint "user_id"
     t.bigint "office_space_id"
     t.text "comment"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["office_space_id"], name: "index_reviews_on_office_space_id"
