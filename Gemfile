@@ -38,3 +38,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
+gem "pundit"
