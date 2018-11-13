@@ -18,17 +18,41 @@
 .element1 {
   grid-row: 1 / span 2;
   grid-column: 1 / span 1;
-  background-color: gray;
+  background-color: #D3D3D3;
 }
 
 .element2 {
   grid-row: 1 / span 1;
   grid-column: 2 / span 1;
-  background-color: green;
+  background-color: #DCDCDC;
 }
 
 .element3 {
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
-  background-color: white;
+  background-color: #A9A9A9;
+}
+
+.btn-treehouse {
+  display:block;
+  text-align: center;
+  margin-top:150px;
+  color: white;
+  padding: 10px 15px;
+  width: 200px;
+  padding:6px 0;
+  background: #E7D28A;
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #E3C662;
+  text-decoration: none;
+  color: white;
+}
+
+#list {
+  list-style-type: none;
+  align-content: left;
+  padding: 0;
 }
