@@ -5,36 +5,31 @@ class ReservationPolicy < ApplicationPolicy
     end
   end
 
-
   def show?
     true
   end
 
   def new?
-    true #all users can create a officespace
+    true
   end
 
   def show?
-  true
+    true
   end
 
   def create?
     true
   end
 
-
-  def edit
+  def edit?
     true
   end
 
-  def update
+  def update?
     true
   end
 
-  def destroy
+  def destroy?
     true
   end
-
-
-
 end
