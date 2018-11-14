@@ -8,10 +8,11 @@
     </div>
   </div><!-- office info -->
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
+    <h3><%= @office_space.name %></h3>
+    <hr>
+    <div class="description-form-container">
+      <div class="description">
         <!-- left box -->
-        <h3><%= @office_space.name %></h3>
         <ul id="list">
           <li>
             <%= @office_space.address %>
@@ -30,29 +31,39 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-4" style="text-align:right; margin-top:60px;">
+      <div class="form">
+        <h2>$<%=@office_space.price%> per night</h2>
+        <%= simple_form_for [@office_space, @reservation] do |f| %>
+        <%= f.input :check_in, required: false%>
+        <%= f.input :check_out, required: false%>
+        <%= f.submit "Reserve", :class => "btn-treehouse pull-right" %>
+        <% end %>
         <!-- right box -->
-        <h4><%= @office_space.price %>$ </h4>
-        <%= link_to "BOOK", new_office_space_reservation_path(@office_space), class: "btn-treehouse pull-right"%>
       </div>
     </div>
   </div>
-  <!-- office review -->
-  <div class="cards-container">
-    <div class="row">
-      <% @office_space.reviews.each do |review| %>
-      <div class="col-xs-12 col-sm-6">
-        <div class="card-review">
-          <div class="stars">
-            <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-            <% end %>
-          </div>
-          <div class="comment">
-            <%= review.comment %>
+</div>
+<hr>
+<!-- office review -->
+<div class="container">
+  <h2>Reviews</h1>
+    <div class="card-container">
+      <div class="row">
+        <% @office_space.reviews.each do |review| %>
+        <div class="col-xs-12 col-sm-6">
+          <div class="card-review">
+            <div class="stars">
+              <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+              <% end %>
+            </div>
+            <div class="comment">
+              "<%= review.comment %>" - <%= review.user.email  %>
+            </div>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
   </div>
+  <hr>

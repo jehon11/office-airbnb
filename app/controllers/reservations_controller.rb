@@ -4,12 +4,6 @@ class ReservationsController < ApplicationController
      @reservations = policy_scope(Reservation)
   end
 
-  def new
-    @office_space = OfficeSpace.find(params[:office_space_id])
-    @reservation = Reservation.new
-    authorize @reservation
-  end
-
   def create
     @reservation = Reservation.new(reservation_params)
     @office_space = OfficeSpace.find(params[:office_space_id])
@@ -17,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      redirect_to reservations_path
+      render :confirm
     else
       render 'office_space/show'
     end
@@ -32,6 +26,9 @@ class ReservationsController < ApplicationController
     else
       redirect_to my_office_path
     end
+  end
+
+  def confirm
   end
 
   def reservation_params

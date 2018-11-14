@@ -34,33 +34,29 @@
 }
 
 .btn-treehouse {
-  display:block;
+  display: block;
   text-align: center;
-  margin-top:150px;
-  color: #E7D28A;
+  color: white;
+  border-radius: 5px;
+  font-weight: strong;
+
+  background-color: #E3C662;
+
   padding: 10px 15px;
-  width: 200px;
-  padding:6px 0;
-  border: 2px solid #E7D28A;
+  width: 150px;
   transition: background 0.3s ease;
   text-decoration: none;
 }
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #E3C662;
-  text-decoration: none;
-  color: white;
-}
 
 .btn-review {
-  display:block;
+  display: block;
   text-align: center;
   margin-top: 25px;
   margin-bottom: 50px;
   color: #E7D28A;
   padding: 10px 15px;
   width: 200px;
-  padding:6px 0;
+  padding: 6px 0;
   border: 2px solid #E7D28A;
   transition: background 0.3s ease;
   text-decoration: none;
@@ -86,8 +82,3 @@
 .add-review-form {
   padding: 0 100px;
 }
-
-
-
-
-
