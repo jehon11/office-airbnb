@@ -1,0 +1,18 @@
+.description-form-container {
+  display: flex;
+  justify-content: space-between;
+
+  .description {
+    flex: 1 0 200px;
+  }
+
+  .form {
+    flex: 0 0 400px;
+
+    .simple_form {
+      width: 100%;
+
+    }
+  }
+
+}
