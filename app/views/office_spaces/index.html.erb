@@ -1,7 +1,8 @@
 <%= render 'shared/banner' %>
-<% @office_spaces.each do |office_space| %>
 <div class="container">
   <div class="row">
+    <% @office_spaces.each do |office_space| %>
+    <!-- card -->
     <div class="col-xs-12 col-sm-6">
       <!-- insert <div class="card"> -->
       <% if office_space.photo.file %>
@@ -16,13 +17,14 @@
               <%= office_space.address %>
             </p>
             <p>
-              <%= office_space.price %> USD</p>
+              <%= office_space.price %> USD
+            </p>
           </div>
           <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-
-          </div>
+            </div>
         </div>
         <% end %>
+        <!-- end of the card -->
       </div>
     </div>
     <p>Find me in app/views/office_spaces/index.html.erb</p>
@@ -32,4 +34,3 @@
     <h3><%= link_to "see my reservations", reservations_path %></h3>
     <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
     <h3>current user:<%= current_user.email %></h3>
-
