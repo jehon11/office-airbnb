@@ -12,16 +12,16 @@
           <div class="card" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
             <% end %>
             <!--            <div class="card-category"></div> -->
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= ["jehon11", "Labiyv", "shuomazurkas", "SylvainAZ"].sample %>">
             <div class="card-description">
               <%= link_to "", office_space_path(office_space), class: "card-link"%>
               <h5><%= office_space.name %></h5>
               <p>
                 <%= office_space.address %>
               </p>
-              <p>
+              <h2 style="color: #E3C662">
                 <%= office_space.price %> USD
-              </p>
+              </h2>
             </div>
           </div>
         </div>
