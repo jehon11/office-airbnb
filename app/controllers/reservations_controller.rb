@@ -1,12 +1,13 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.where(user: current_user)
+     @reservations = policy_scope(Reservation)
   end
 
   def new
     @office_space = OfficeSpace.find(params[:office_space_id])
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
@@ -14,10 +15,22 @@ class ReservationsController < ApplicationController
     @office_space = OfficeSpace.find(params[:office_space_id])
     @reservation.office_space = @office_space
     @reservation.user = current_user
+    authorize @reservation
     if @reservation.save
       redirect_to reservations_path
     else
       render 'office_space/show'
+    end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
+    @reservation.destroy
+    if @reservation.user == current_user
+      redirect_to reservations_path
+    else
+      redirect_to my_office_path
     end
   end
 

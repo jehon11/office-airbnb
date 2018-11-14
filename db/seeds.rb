@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Reservation.destroy_all
+Review.destroy_all
 OfficeSpace.destroy_all
 
 User.destroy_all
