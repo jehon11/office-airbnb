@@ -25,7 +25,7 @@ class OfficeSpacesController < ApplicationController
     authorize @office_space
 
     if @office_space.save
-      redirect_to office_spaces_path
+      redirect_to office_space_path(@office_space)
     else
       render :new
     end
