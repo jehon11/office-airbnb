@@ -5,6 +5,14 @@ class OfficeSpacesController < ApplicationController
   def index
     @office_spaces = policy_scope(OfficeSpace)
 
+      @office_spaces = OfficeSpace.where.not(latitude: nil, longitude: nil)
+      @markers = @office_spaces.map do |office|
+      {
+        lng: office.longitude,
+        lat: office.latitude,
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: office }) }
+      }
+      end
   end
 
   def show
