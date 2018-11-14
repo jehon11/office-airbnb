@@ -1,14 +1,19 @@
-<h3><%= link_to "Go Back", office_spaces_path  %></h3>
-<%= current_user.email  %>
-<% @reservations.each_with_index do |reservation, index| %>
-<h3><%= index %></h3>
-<li>
-  <%= reservation.check_in %>
-</li>
-<li>
-  <%= reservation.check_out %>
-</li>
-<li>
-  <%= reservation.user.email %>
-</li>
-<% end %>
+<div class="container">
+  <div class="col-md-6">
+    <br>
+    <h1>All My Reservations</h1>
+    <br>
+    <br>
+      <div class="card">
+        <figure class="front">
+        <% @reservations.each_with_index do |reservation, index| %>
+          <img src="http://www.jboeijenga.nl/img/front.jpg" alt="front">
+          <div class="caption">
+           <h2><%= index %></h2>
+           <p><b>user: </b><%= current_user.email %></p>
+           <p><%= reservation.check_in %><span> <b>until</b> <%= reservation.check_out %></span></p>
+          </div>
+          <% end %>
+        </figure>
+    </div>
+</div>
