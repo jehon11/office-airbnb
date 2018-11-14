@@ -56,12 +56,3 @@
       <% end %>
     </div>
   </div>
-  <div class="add-review-form">
-    <%= simple_form_for [@office_space, @review] do |f| %>
-    <%= f.input :comment, placeholder: 'Awesome workspace!' %>
-    <%= f.input :rating, collection: [1,2,3,4,5], required: false %>
-    <%= button_tag( class: "btn-review") do %>
-    Submit Review
-    <% end %>
-    <% end %>
-  </div>
