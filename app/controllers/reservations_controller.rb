@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       render :confirm
     else
-      render 'office_space/show'
+      render 'office_spaces/show'
     end
   end
 
