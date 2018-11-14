@@ -47,7 +47,16 @@ url = "https://static.geo.de/bilder/5b/43/37325/facebook_image/339b53cdefed89df2
 office_6.remote_photo_url = url
 office_6.save
 
-review_1 =
+review_1 = Review.create!(user: user1, office_space: office_1, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
+review_2 = Review.create!(user: user2, office_space: office_1, rating: 5, comment: "very nice : the most pleasant office i have ever seen" )
+
+review_3 = Review.create!(user: user1, office_space: office_2, rating: 5, comment: "The staff were very helpful. When I complained that the office to which we had been initially assigned were noise, they moved me at once. meal was good too." )
+review_4 = Review.create!(user: user2, office_space: office_2, rating: 4, comment: "Great time at this office, good size apartment, perfect location close to skytrain, supermarket and shopping mall." )
+
+review_4 = Review.create!(user: user2, office_space: office_3, rating: 4, comment: "Good views, office windows excellent brilliant views. cafe was good too. Everything that we needed." )
+review_5 = Review.create!(user: user1, office_space: office_3, rating: 4, comment: "Great size office. Nice and clean and tidy. Terrific value. Good location." )
+
+review_6 = Review.create!(user: user1, office_space: office_4, rating: 5, comment: "Great  office. Wonderful and tidy. good colleagues. Good location." )
 
 
 
