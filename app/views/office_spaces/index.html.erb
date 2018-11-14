@@ -1,31 +1,40 @@
 <%= render 'shared/banner' %>
-<% @office_spaces.each do |office_space| %>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <!-- insert <div class="card"> -->
-      <% if office_space.photo.file %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
-        <% else %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?office');">
+    <% @office_spaces.each do |office_space| %>
+    <!-- card -->
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-info">
+          <!-- insert <div class="card"> -->
+          <% if office_space.photo.file %>
+            <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
+          <% else %>
+            <div class="card" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
           <% end %>
-          <div class="card-category">
+ <!--            <div class="card-category"></div> -->
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
+            <div class="card-description">
+                <%= link_to "", office_space_path(office_space), class: "card-link"%>
+              <h5><%= office_space.name %></h5>
+              <p>
+                <%= office_space.address %>
+              </p>
+              <p>
+                <%= office_space.price %> USD
+              </p>
           </div>
-          <div class="card-description">
-            <h2><%= link_to office_space.name, office_space_path(office_space) %></h2>
-            <p>
-              <%= office_space.address %>
-            </p>
-            <p>
-              <%= office_space.price %> USD</p>
           </div>
+
+
+
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+        <!-- end of the card -->
   </div>
-  <p>Find me in app/views/office_spaces/index.html.erb</p>
-  <p>
-    <span id="banner-typed-text"></span>
-  </p>
-  <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+</div>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <h3><%= link_to "Add a new office space", new_office_space_path %></h3>

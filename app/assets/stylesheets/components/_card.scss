@@ -1,12 +1,27 @@
 .card {
   height: 300px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  // text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: gray;
   position: relative;
   margin: 10px 20px 200px 30px;
+  transition: all 0.2s linear;
   // padding: 40px;
+}
+
+.card-description {
+  position: absolute;
+  height: 170px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-left: -150px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 2px 2px 10px 3px #D3D3D3;
+  text-decoration: none;
 }
 
 .card-user {
@@ -25,22 +40,22 @@
   text-transform: uppercase;
 }
 
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+.card-description:hover {
+  bottom: 49%;
+  left: 49%;
+  // opacity: 0.3;
+  transition: all ease 0.2s;
+  box-shadow: 2px 2px 14px 4px #808080;
 }
 
 .card-description h2 {
   font-size: 24px;
 }
-
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
 }
-
 .card-link {
   position: absolute;
   top: 0;
@@ -48,10 +63,26 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: #D3D3D3;
   opacity: 0;
 }
-
 .card-link:hover {
   opacity: 0.1;
 }
+
+// .mask {
+//   height: 300px;
+//   opacity: 0;
+//   background-color: #E7D28A;
+//   transition: all 0.4s ease-in-out;
+// }
+
+// .mask h4 {
+//   transform: translateY(-100px);
+//   opacity: 0;
+//   transition: all 0.2s ease-in-out;
+// }
+
+// .mask:hover {
+//   opacity: 0.5;
+// }
