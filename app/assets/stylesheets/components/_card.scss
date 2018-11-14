@@ -5,7 +5,7 @@
   background-position: center;
   color: gray;
   position: relative;
-  margin: 10px 20px 200px 30px;
+  margin: 10px 20px 125px 30px;
   transition: all 0.2s linear;
   // padding: 40px;
 }
@@ -51,11 +51,13 @@
 .card-description h2 {
   font-size: 24px;
 }
+
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -66,8 +68,17 @@
   background: #D3D3D3;
   opacity: 0;
 }
+
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-review {
+  margin: 20px;
+
+  .stars {
+    margin-bottom: 15px;
+  }
 }
 
 // .mask {
