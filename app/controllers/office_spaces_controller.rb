@@ -4,12 +4,30 @@ class OfficeSpacesController < ApplicationController
 
   def index
     @office_spaces = policy_scope(OfficeSpace)
-
+      @office_spaces = OfficeSpace.where.not(latitude: nil, longitude: nil)
+      @markers = @office_spaces.map do |office|
+      {
+        lng: office.longitude,
+        lat: office.latitude,
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: office }) }
+          # this takes the html code of the partial and use it on the pop up tag. office instance is passed as
+          # a variable to be use in the erb code
+      }
+      end
   end
 
   def show
     @office_space = OfficeSpace.find(params[:id])
     @reservation = Reservation.new
+
+    @markers =
+      [{
+        lng: @office_space.longitude,
+        lat: @office_space.latitude,
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: @office_space }) }
+
+      }]
+
     @review = Review.new
     authorize @office_space
   end
