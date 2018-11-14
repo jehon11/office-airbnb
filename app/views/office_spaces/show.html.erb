@@ -30,6 +30,10 @@
             <%= @office_space.owner.email %>
           </li>
         </ul>
+
+        <div id="map" style="width: 100%;
+  height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+
       </div>
       <div class="form">
         <h2>$<%=@office_space.price%> per day</h2>
