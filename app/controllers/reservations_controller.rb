@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
     authorize @reservation
     @reservation.destroy
     if @reservation.user == current_user
-      redirect_to reservations_path
+      redirect_to office_spaces_path
     else
       redirect_to my_office_path
     end
@@ -34,6 +34,6 @@ class ReservationsController < ApplicationController
   def reservation_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:reservation).permit(:check_in, :check_out)
+    params.require(:reservation).permit(:check_in, :check_out, :usernumber)
   end
 end

@@ -30,6 +30,9 @@
             Check-out
           </th>
           <th>
+            Users
+          </th>
+          <th>
             Cancel
           </th>
         </tr>
@@ -46,6 +49,9 @@
           </td>
           <td>
             <%= reservation.check_out %>
+          </td>
+          <td>
+            <%= reservation.usernumber %>
           </td>
           <td>
             <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your guest will be very unhappy!"} do %>

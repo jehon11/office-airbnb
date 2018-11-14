@@ -32,11 +32,12 @@
         </ul>
       </div>
       <div class="form">
-        <h2>$<%=@office_space.price%> per night</h2>
+        <h2>$<%=@office_space.price%> per day</h2>
         <%= simple_form_for [@office_space, @reservation] do |f| %>
-        <%= f.input :check_in, required: false%>
-        <%= f.input :check_out, required: false%>
-        <%= f.submit "Reserve", :class => "btn-treehouse pull-right" %>
+        <%= f.input :check_in, as: :string, input_html: {class: "datepicker"}%>
+        <%= f.input :check_out, as: :string, input_html: {class: "datepicker"}%>
+        <%= f.input :usernumber, label: "Input number of users", required: false%>
+        <%= f.submit "Reserve", :class => "btn-treehouse" %>
         <% end %>
         <!-- right box -->
       </div>
