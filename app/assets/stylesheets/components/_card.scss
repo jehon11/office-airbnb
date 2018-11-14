@@ -41,8 +41,8 @@
 }
 
 .card-description:hover {
-  bottom: 104px;
-  left: 250px;
+  bottom: 49%;
+  left: 49%;
   // opacity: 0.3;
   transition: all ease 0.2s;
   box-shadow: 2px 2px 14px 4px #808080;
@@ -63,13 +63,12 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background: #D3D3D3;
   opacity: 0;
 }
 .card-link:hover {
   opacity: 0.1;
 }
-
 
 // .mask {
 //   height: 300px;
