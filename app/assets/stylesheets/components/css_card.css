@@ -1,17 +1,16 @@
-
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,800);
 @import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+
+
 *{
   box-sizing:border-box;
 }
-
 html, body{
   width:100%;
   height:100%;
 }
-
 body{
+  background: whitesmoke;
   font-weight: 400;
   font-size: 1em;
   font-family: 'Raleway', Arial, sans-serif;
@@ -24,7 +23,7 @@ body{
 
 .container{
   position:absolute;
-  // perspective:1000;
+  perspective:1000;
   margin-top:-135px;
   top:50%;
 }
@@ -38,7 +37,7 @@ body{
 figure{
   background: #2e5d5a;
   color: #fff;
-  // backface-visibility: hidden;
+  backface-visibility: hidden;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -48,6 +47,16 @@ figure{
   transition: 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+figure.front{
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+figure.back,
+.card.flipped{
+  transform: rotateY(180deg);
 }
 
 figure img{
@@ -65,7 +74,7 @@ figure .caption {
   height: 100%;
   text-transform: uppercase;
   padding: 2em;
-  // backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .front .caption{
@@ -98,7 +107,7 @@ figure .caption {
   top: 50%;
   left: 0;
   width: 100%;
-  color: #272833;
+  color: red;
   transition: transform 0.35s, color 0.35s;
   transform: translate3d(0,-50%,0);
 }
@@ -142,6 +151,53 @@ figure .caption {
   transition: opacity 0.35s, transform 0.35s;
 }
 
+.back .caption:before,
+.back .caption:after{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  content: '';
+  opacity: 0;
+  transition: opacity 0.45s, transform 0.45s;
+  transition-delay: 1s;
+}
+
+.back .caption:before{
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: scale(0,1);
+}
+
+.back .caption:after{
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  transform: scale(1,0);
+}
+
+.card.flipped .back .caption:before,
+.card.flipped .back .caption:after {
+  opacity: .9;
+  transform: scale(1);
+}
+
+.back dl{
+  font-family:'Lato', Arial, sans-serif;
+  font-weight:300;
+  bottom:40px;
+  left:40px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity .35s, transform .35s;
+  transition-delay: .85s;
+  transform: translate3d(-40px,0,0);
+}
+
+.card.flipped .back dl {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
 
 dl dt{
   float: left;
@@ -191,7 +247,3 @@ figure a{
     margin-left:-225px;
   }
 }
-
-
-$color: #E7D28A;
-

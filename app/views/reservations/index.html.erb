@@ -7,7 +7,7 @@
       <div class="card">
         <figure class="front">
         <% @reservations.each_with_index do |reservation, index| %>
-          <img src="http://www.jboeijenga.nl/img/front.jpg" alt="front">
+          <% cl_image_tag reservation.office_space.photo, height: 300, width: 400 %>
           <div class="caption">
            <h2><%= index %></h2>
            <p><b>user: </b><%= current_user.email %></p>
