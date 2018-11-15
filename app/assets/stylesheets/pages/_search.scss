@@ -1,15 +1,27 @@
 .search-page {
-  display: flex;
   width: 100vw;
 
   .search-result-container {
-    flex: 0 1 1000px;
-  }
+    display: flex;
 
-  #map {
-    flex: 1 0 0px;
-    height: calc(100vh);
-    position: sticky !important;
-    top: 0;
+    .search-result-cards-container {
+      flex: 0 1 1000px;
+      margin-left: 30px;
+
+      .search-term {
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+
+    }
+
+    #map {
+      flex: 1 0 0px;
+      height: calc(100vh - 70px);
+      position: sticky !important;
+      top: 70px;
+    }
+
+
   }
 }
