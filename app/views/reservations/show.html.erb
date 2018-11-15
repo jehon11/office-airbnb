@@ -8,6 +8,10 @@
   <style>
     .wrap {display:flex;}
       .rightBox {width:50%;height:100vh;background:#E3C662;}
+
+      .swal-button-container{
+        display: none;
+      }
     </style>
 </head>
 
@@ -40,9 +44,7 @@
           <%= @reservation.usernumber %>
         </p>
         <hr>
-        <%= link_to reservations_path do %>
-        <button type="button" class="btn-treehouse">Confirm</button>
-        <% end %>
+        <button id="sweet-alert-reservation" type="button" class="btn-treehouse">Confirm</button>
         <%= link_to reservation_path(@reservation), method: :delete, data: {confirm: "Are you sure?"} do %>
         <button type="button" class="btn-treehouse" style="background-color: grey">Cancel</button>
         <% end %>
