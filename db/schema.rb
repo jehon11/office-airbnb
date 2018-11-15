@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_060421) do
+ActiveRecord::Schema.define(version: 2018_11_15_064823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2018_11_14_060421) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.boolean "wifi", default: false
+    t.boolean "reception", default: false
+    t.boolean "aircon", default: false
+    t.boolean "cleaning", default: false
+    t.boolean "meeting_rooms", default: false
+    t.boolean "coffee_machine", default: false
+    t.boolean "cafeteria", default: false
+    t.boolean "parking", default: false
     t.index ["user_id"], name: "index_office_spaces_on_user_id"
   end
 
