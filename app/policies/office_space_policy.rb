@@ -17,6 +17,10 @@ class OfficeSpacePolicy < ApplicationPolicy
     true
   end
 
+  def search?
+    true
+  end
+
   def edit?
     record.owner == user
   end

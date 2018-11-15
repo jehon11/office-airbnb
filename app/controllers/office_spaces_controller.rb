@@ -73,6 +73,11 @@ class OfficeSpacesController < ApplicationController
     redirect_to my_offices_path
   end
 
+  def search
+    @office_spaces = OfficeSpace.where("address ILIKE ?", "%#{params[:office_space][:address]}%")
+    authorize @office_spaces
+  end
+
   private
 
   def office_space_params

@@ -33,9 +33,10 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-#my gems
+# my gems
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
+gem 'pg_search'
 
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
 gem "pundit"
