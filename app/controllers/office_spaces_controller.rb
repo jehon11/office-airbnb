@@ -4,7 +4,7 @@ class OfficeSpacesController < ApplicationController
 
   def index
     @office_spaces = policy_scope(OfficeSpace)
-      @office_spaces = OfficeSpace.where.not(latitude: nil, longitude: nil)
+      # @office_spaces = OfficeSpace.where.not(latitude: nil, longitude: nil)
       @markers = @office_spaces.map do |office|
       {
         lng: office.longitude,
