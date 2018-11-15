@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      redirect_to reservation_path(@reservation)
+      render :confirm
     else
       render 'office_spaces/show'
     end
