@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      render :confirm
+      render :show
     else
       render 'office_spaces/show'
     end
