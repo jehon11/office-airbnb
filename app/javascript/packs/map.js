@@ -35,10 +35,40 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
       .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-      .setHTML(marker.infoWindow.content))
+        .setHTML(marker.infoWindow.content))
+      .addTo(map);
+  })
+
+  markers.forEach((marker) => {
+    new mapboxgl.Popup({ closeOnClick: false, offset: 10})
+      .setLngLat([marker.lng, marker.lat])
+      .setHTML(marker.priceWindow.content)
       .addTo(map);
   })
 
 
+}
 
+const addressInput = document.getElementById('flat_address');
+
+if (addressInput) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput,
+    type: 'city',
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  });
+}
+
+const addressInput2 = document.getElementById('flat_address_2');
+
+if (addressInput2) {
+  const places = require('places.js');
+  const placesAutocomplete = places({
+    container: addressInput2,
+  });
 }

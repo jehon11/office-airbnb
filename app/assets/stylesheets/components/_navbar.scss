@@ -13,7 +13,19 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  margin-right: 20px;
+  height: 100px;
+}
+
+.navbar-left {
+  display: flex;
+  align-content: center;
+
+  .navbar-search {
+    margin-top: 30px;
+    width: 400px;
+    font-size: 15px;
+  }
 }
 
 /* User Avatar */
@@ -41,6 +53,7 @@
   color: #616668;
   font-size: 14px;
 }
+
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
@@ -52,7 +65,8 @@
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
-.navbar-wagon-dropdown-menu li > a {
+
+.navbar-wagon-dropdown-menu li>a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
@@ -60,10 +74,12 @@
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+
+.navbar-wagon-dropdown-menu li>a:hover {
   background: transparent !important;
   color: black !important;
 }
+
 .navbar-wagon-dropdown-menu:before {
   content: ' ';
   height: 10px;

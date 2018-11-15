@@ -1,7 +1,16 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png", height: 50 %>
+  <div class="navbar-left">
+    <div class="logo">
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+    <div class='navbar-search'>
+      <%= simple_form_for(:office_space, method: :get, url: search_path) do |f| %>
+      <%= f.input :address, label: false, input_html: {id: "flat_address"}, placeholder: "Find a workspace"  %>
+    </div>
+  </div>
   <!--   <span id="banner-typed-text"></span>
  -->
   <% end %>
@@ -42,9 +51,19 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <% if user_signed_in? %>
+        <li class="navbar-wagon-item"><%= current_user.email %></li>
+        <li>
+          <%= link_to "Browse Workspaces", office_spaces_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <li>
+          <%= link_to "My Offices", my_offices_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <li>
+          <%= link_to "Reservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <!-- Avatar with dropdown menu -->
+        <% end %>
       </ul>
     </div>
   </div>

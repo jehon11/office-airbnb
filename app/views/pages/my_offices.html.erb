@@ -35,6 +35,14 @@
           <th>
             Cancel
           </th>
+          <th>
+             <%if office_space.reservations.count == 0 then%>
+
+             <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
+            <p style="text-decoration: none">Destroy</p>
+            <%end%>
+            <%end%>
+          </th>
         </tr>
         <% office_space.reservations.each do |reservation| %>
         <tr>

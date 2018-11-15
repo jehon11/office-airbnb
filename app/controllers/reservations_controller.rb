@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
     if @reservation.user == current_user
       redirect_to office_spaces_path
     else
-      redirect_to my_office_path
+      redirect_to my_offices_path
     end
   end
 
