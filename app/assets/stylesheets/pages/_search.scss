@@ -1,0 +1,27 @@
+.search-page {
+  width: 100vw;
+
+  .search-result-container {
+    display: flex;
+
+    .search-result-cards-container {
+      flex: 0 1 1000px;
+      margin-left: 30px;
+
+      .search-term {
+        margin-top: 20px;
+        margin-left: 10px;
+      }
+
+    }
+
+    #map {
+      flex: 1 0 0px;
+      height: calc(100vh - 70px);
+      position: sticky !important;
+      top: 70px;
+    }
+
+
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation</title>
+  <style>
+    .wrap {display:flex;}
+      .rightBox {width:50%;height:100vh;background:#E3C662;}
+    </style>
+</head>
+
+<body>
+  <div class="wrap" style="background:#000;">
+    <div class="leftBox" style="background-image: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 80%), url('<%= cl_image_path @reservation.office_space.photo %>')">
+      <div class="col-sm-6 bg-text">
+        <h1>You're almost there!</h1>
+        <p>Please check your reservation detail</p>
+      </div>
+    </div>
+    <div class="rightBox">
+      <div class="recipt">
+        <h1>Booking Recipt</h1>
+        <hr>
+        <h3><%= @reservation.office_space.name %></h3>
+        <h4 style="color: #E3C662; font-weight: bold">
+            $
+            <%= @reservation.office_space.price %> per day</p>
+          </h4>
+        <b>Check-in:</b>
+        <%= @reservation.check_in %>
+        </p>
+        <p>
+          <b>Check-out:</b>
+          <%= @reservation.check_out %>
+        </p>
+        <p>
+          <b>Number of Users:</b>
+          <%= @reservation.usernumber %>
+        </p>
+        <hr>
+        <%= link_to reservations_path do %>
+        <button type="button" class="btn-treehouse">Confirm</button>
+        <% end %>
+        <%= link_to reservation_path(@reservation), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <button type="button" class="btn-treehouse" style="background-color: grey">Cancel</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

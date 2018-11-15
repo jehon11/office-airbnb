@@ -1,23 +1,22 @@
 <div class="new-reservation-container">
-
   <h1>Confirm you reservation</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
-<h3><%= link_to "Go Back", office_space_path(@office_space)  %></h3>
-<div class="container-new-reservation">
-  <%= simple_form_for [@office_space, @reservation] do |f| %>
-  <div class="row">
-    <div class="col-xs-12 col-md-offset-3 col-md-6">
-      <%= f.input :check_in%>
+  <p>Find me in app/views/reservations/new.html.erb</p>
+  <h3><%= link_to "Go Back", office_space_path(@office_space)  %></h3>
+  <div class="container-new-reservation">
+    <%= simple_form_for [@office_space, @reservation] do |f| %>
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <%= f.input :check_in%>
+      </div>
+      <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <%= f.input :check_out%>
+      </div>
+      <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <%= button_tag( :class => "button") do %>
+        <i class="fas fa-plus-circle"></i> Add Reservation
+      </div>
+      <% end %>
+      <% end %>
     </div>
-    <div class="col-xs-12 col-md-offset-3 col-md-6">
-      <%= f.input :check_out%>
-    </div>
-    <div class="col-xs-12 col-md-offset-3 col-md-6">
-      <%= button_tag( :class => "button") do %>
-      <i class="fas fa-plus-circle"></i> Add Reservation
-    </div>
-    <% end %>
-    <% end %>
   </div>
-</div>
 </div>
