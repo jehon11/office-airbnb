@@ -7,4 +7,11 @@ class OfficeSpace < ApplicationRecord
   has_many :users, through: :reservations
   has_many :reviews
   validates :owner, :name, :price, :address, presence: true
+
+  include PgSearch
+  pg_search_scope :search_address,
+    against: [:address],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

@@ -17,15 +17,19 @@ class OfficeSpacePolicy < ApplicationPolicy
     true
   end
 
-  def edit
+  def search?
+    true
+  end
+
+  def edit?
     record.owner == user
   end
 
-  def update
+  def update?
     record.owner == user
   end
 
-  def destroy
+  def destroy?
     record.owner == user
   end
 end

@@ -1,7 +1,16 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png", height: 50 %>
+  <div class="navbar-left">
+    <div class="logo">
+      <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
+    <div class='navbar-search'>
+      <%= simple_form_for(:office_space, method: :get, url: search_path) do |f| %>
+      <%= f.input :address, label: false, input_html: {id: "flat_address"}, placeholder: "Find a workspace"  %>
+    </div>
+  </div>
   <!--   <span id="banner-typed-text"></span>
  -->
   <% end %>
