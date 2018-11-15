@@ -96,5 +96,5 @@ review_7 = Review.create!(user: user2, office_space: office_4, rating: 3, commen
 review_8 = Review.create!(user: user2, office_space: office_5, rating: 4, comment: "Allen Hall 104 Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
 
 
-reservation1 = Reservation.create!(user: user1, office_space: office_1, check_in: Date.parse("Dec 8 2018"), check_out: Date.parse("Dec 8 2019"))
-reservation2 = Reservation.create!(user: user2, office_space: office_2, check_in: Date.parse("Dec 10 2018"), check_out: Date.parse("Dec 8 2019"))
+reservation1 = Reservation.create!(user: user1, office_space: office_1, check_in: Date.parse("Dec 8 2018"), check_out: Date.parse("Dec 8 2019"), usernumber: 10)
+reservation2 = Reservation.create!(user: user2, office_space: office_2, check_in: Date.parse("Dec 10 2018"), check_out: Date.parse("Dec 8 2019"), usernumber: 1)
