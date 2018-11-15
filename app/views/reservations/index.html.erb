@@ -21,6 +21,12 @@
           </p>
           <p>
             <%= reservation.check_in %><span> <b>until</b> <%= reservation.check_out %></span></p>
+
+            <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %>
+            <button type="button" class="btn btn-danger">Cancel this Reservation</button>
+            <% end %>
+
+
         </div>
       </div>
     </div>

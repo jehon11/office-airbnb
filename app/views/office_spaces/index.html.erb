@@ -9,7 +9,7 @@
         <% if office_space.photo.file %>
         <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
           <% else %>
-          <div class="card" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
+          <div class="card1" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
             <% end %>
             <!--            <div class="card-category"></div> -->
             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= ["jehon11", "Labiyv", "shuomazurkas", "SylvainAZ"].sample %>">
