@@ -70,7 +70,7 @@ class OfficeSpacesController < ApplicationController
     authorize @office_space
 
     @office_space.destroy
-    redirect_to office_spaces_path
+    redirect_to my_offices_path
   end
 
   def search
