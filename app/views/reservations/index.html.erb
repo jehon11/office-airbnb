@@ -1,4 +1,5 @@
 <!--  -->
+<%= render 'shared/navbar' %>
 <div class="banner-reservation" style="width:100%; height: 40vh; background-color:#E7D28A; color: white">
   <div style="text-align:center">
     <h2>All My Reservations</h2>
@@ -21,12 +22,9 @@
           </p>
           <p>
             <%= reservation.check_in %><span> <b>until</b> <%= reservation.check_out %></span></p>
-
-            <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %>
-            <button type="button" class="btn btn-danger">Cancel this Reservation</button>
-            <% end %>
-
-
+          <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %>
+          <button type="button" class="btn btn-danger">Cancel this Reservation</button>
+          <% end %>
         </div>
       </div>
     </div>
