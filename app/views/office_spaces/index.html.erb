@@ -3,38 +3,47 @@
   <div class="row">
     <% @office_spaces.each do |office_space| %>
     <!-- card -->
-      <div class="col-xs-12 col-sm-6">
-        <div class="card-info">
-          <!-- insert <div class="card"> -->
-          <% if office_space.photo.file %>
-            <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-info">
+        <!-- insert <div class="card"> -->
+        <% if office_space.photo.file %>
+        <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
           <% else %>
-            <div class="card" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
-          <% end %>
- <!--            <div class="card-category"></div> -->
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-
+          <div class="card1" style="background-image:  url('https://source.unsplash.com/500x400/?office');">
+            <% end %>
+            <!--            <div class="card-category"></div> -->
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= ["jehon11", "Labiyv", "shuomazurkas", "SylvainAZ"].sample %>">
             <div class="card-description">
-                <%= link_to "", office_space_path(office_space), class: "card-link"%>
+              <%= link_to "", office_space_path(office_space), class: "card-link"%>
               <h5><%= office_space.name %></h5>
               <p>
                 <%= office_space.address %>
               </p>
-              <p>
+              <h2 style="color: #E3C662">
                 <%= office_space.price %> USD
-              </p>
+              </h2>
+            </div>
           </div>
-          </div>
-
-
-
         </div>
       </div>
-    <% end %>
-        <!-- end of the card -->
+      <% end %>
+      <!-- end of the card -->
+    </div>
   </div>
+  <hr>
+  <!--   <p>
+    <span id="banner-typed-text"></span>
+  </p> -->
+  <h2 class="text-center" style="margin-bottom: 30px">List your Space</h2>
+  <div class="text-center">
+    <%= link_to new_office_space_path do %>
+    <button type="button" class="btn-treehouse">List your Space</button>
+    <% end %>
+  </div>
+  <hr>
 </div>
-    <p>
-      <span id="banner-typed-text"></span>
-    </p>
-    <h3><%= link_to "Add a new office space", new_office_space_path %></h3>
+
+  <div id="map" style="width: 100%;
+  height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+
+  <h3><%= link_to "Add a new office space", new_office_space_path %></h3>

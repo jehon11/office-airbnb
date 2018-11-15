@@ -30,7 +30,18 @@
             Check-out
           </th>
           <th>
+            Users
+          </th>
+          <th>
             Cancel
+          </th>
+          <th>
+             <%if office_space.reservations.count == 0 then%>
+
+             <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
+            <p style="text-decoration: none">Destroy</p>
+            <%end%>
+            <%end%>
           </th>
         </tr>
         <% office_space.reservations.each do |reservation| %>
@@ -46,6 +57,9 @@
           </td>
           <td>
             <%= reservation.check_out %>
+          </td>
+          <td>
+            <%= reservation.usernumber %>
           </td>
           <td>
             <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your guest will be very unhappy!"} do %>
