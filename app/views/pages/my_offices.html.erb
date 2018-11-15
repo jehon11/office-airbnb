@@ -1,4 +1,3 @@
-<%= render 'shared/navbar' %>
 <div class="container">
   <h1 style="margin-top: 150px">My Offices</h1>
   <hr>
@@ -10,6 +9,15 @@
       <% else %>
       <%=cl_image_tag("fhj3o5ffjyhaexzdxuqa", height: 350, width: 300, crop: :fill) %>
       <% end %>
+
+            <%if office_space.reservations.count == 0 then%>
+            <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
+            <p style="text-decoration: none">Delete this office</p>
+            <%end%>
+            <%end%>
+
+
+
     </div>
     <div class="booking-details">
       <table class="table fixed">
@@ -36,13 +44,7 @@
           <th>
             Cancel
           </th>
-          <th>
-            <%if office_space.reservations.count == 0 then%>
-            <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
-            <p style="text-decoration: none">Destroy</p>
-            <%end%>
-            <%end%>
-          </th>
+
         </tr>
         <% office_space.reservations.each do |reservation| %>
         <tr>
