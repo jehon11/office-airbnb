@@ -39,12 +39,12 @@ if (mapElement) { // only build a map if there's a div#map to inject into
       .addTo(map);
   })
 
-  markers.forEach((marker) => {
-    new mapboxgl.Popup({ closeOnClick: false, offset: 10 })
-      .setLngLat([marker.lng, marker.lat])
-      .setHTML(marker.priceWindow.content)
-      .addTo(map);
-  })
+  // markers.forEach((marker) => {
+  //   new mapboxgl.Popup({ closeOnClick: false, offset: 10 })
+  //     .setLngLat([marker.lng, marker.lat])
+  //     .setHTML(marker.priceWindow.content)
+  //     .addTo(map);
+  // })
 
 
 }
