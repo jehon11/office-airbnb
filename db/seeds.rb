@@ -16,11 +16,9 @@ User.destroy_all
 user1 = User.create!(email: "hi@email.com", password: "123456")
 user2 = User.create!(email: "hello@email.com", password: "123456")
 
-<<<<<<< HEAD
-=======
+
 puts "creating offices"
 
->>>>>>> initial styling complete
 office_1 = OfficeSpace.create!(name: "Prudential Plaza 10F", address: "Tokyo Tower", description: "Host 8 people group meeting and jam sessions. Space has the power to unlock potential — in our teams and in ourselves. Our workspaces blend intentional design, warm hospitality, and flexibility so you and your team can do your best work.", price: 2400, owner: user1)
 url = "https://i.pinimg.com/originals/88/6e/25/886e25879db8d6db6e6a8a2301d21393.jpg"
 office_1.remote_photo_url = url
@@ -86,11 +84,9 @@ office_12 = OfficeSpace.create!(name: "Shimbashi", address: "Shimbashi station",
 url = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/fc/3054804-poster-p-1-8-top-office-design-trends-for-2016.jpg"
 office_12.remote_photo_url = url
 office_12.save!
-<<<<<<< HEAD
-=======
+
 
 puts "creating reviews"
->>>>>>> initial styling complete
 
 review_1 = Review.create!(user: user1, office_space: office_1, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
 review_2 = Review.create!(user: user2, office_space: office_1, rating: 5, comment: "very nice : the most pleasant office i have ever seen" )

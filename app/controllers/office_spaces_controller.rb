@@ -26,7 +26,6 @@ class OfficeSpacesController < ApplicationController
         lng: @office_space.longitude,
         lat: @office_space.latitude,
           infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: @office_space }) },
-          priceWindow: { content: render_to_string(partial: "/office_spaces/price_window", locals: { office: office }) }
       }]
 
     @review = Review.new
