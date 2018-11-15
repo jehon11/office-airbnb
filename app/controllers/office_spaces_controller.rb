@@ -75,8 +75,18 @@ class OfficeSpacesController < ApplicationController
   end
 
   def search
-    @office_spaces = OfficeSpace.where("address ILIKE ?", "%#{params[:office_space][:address]}%")
+    @office_spaces = OfficeSpace.where("address ILIKE ?", "%#{params[:office_space_search][:address]}%")
+    @params = params[:office_space_search][:address]
     authorize @office_spaces
+    @markers = @office_spaces.map do |office|
+      {
+        lng: office.longitude,
+        lat: office.latitude,
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: office }) }
+          # this takes the html code of the partial and use it on the pop up tag. office instance is passed as
+          # a variable to be use in the erb code
+      }
+    end
   end
 
   private

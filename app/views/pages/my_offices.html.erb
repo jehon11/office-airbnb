@@ -1,5 +1,6 @@
+<%= render 'shared/navbar' %>
 <div class="container">
-  <h1>My Offices</h1>
+  <h1 style="margin-top: 150px">My Offices</h1>
   <hr>
   <% @office_spaces.each do |office_space| %>
   <div class="office-space-booking-container">
@@ -36,9 +37,8 @@
             Cancel
           </th>
           <th>
-             <%if office_space.reservations.count == 0 then%>
-
-             <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
+            <%if office_space.reservations.count == 0 then%>
+            <%= link_to office_space_path(office_space), method: :delete,data: {confirm: "Are you sure? No more income!"} do %>
             <p style="text-decoration: none">Destroy</p>
             <%end%>
             <%end%>

@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,6 +16,11 @@ User.destroy_all
 user1 = User.create!(email: "hi@email.com", password: "123456")
 user2 = User.create!(email: "hello@email.com", password: "123456")
 
+<<<<<<< HEAD
+=======
+puts "creating offices"
+
+>>>>>>> initial styling complete
 office_1 = OfficeSpace.create!(name: "Prudential Plaza 10F", address: "Tokyo Tower", description: "Host 8 people group meeting and jam sessions. Space has the power to unlock potential — in our teams and in ourselves. Our workspaces blend intentional design, warm hospitality, and flexibility so you and your team can do your best work.", price: 2400, owner: user1)
 url = "https://i.pinimg.com/originals/88/6e/25/886e25879db8d6db6e6a8a2301d21393.jpg"
 office_1.remote_photo_url = url
@@ -80,6 +86,11 @@ office_12 = OfficeSpace.create!(name: "Shimbashi", address: "Shimbashi station",
 url = "https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/fc/3054804-poster-p-1-8-top-office-design-trends-for-2016.jpg"
 office_12.remote_photo_url = url
 office_12.save!
+<<<<<<< HEAD
+=======
+
+puts "creating reviews"
+>>>>>>> initial styling complete
 
 review_1 = Review.create!(user: user1, office_space: office_1, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
 review_2 = Review.create!(user: user2, office_space: office_1, rating: 5, comment: "very nice : the most pleasant office i have ever seen" )
@@ -94,6 +105,8 @@ review_6 = Review.create!(user: user1, office_space: office_4, rating: 5, commen
 review_7 = Review.create!(user: user2, office_space: office_4, rating: 3, comment: "7C Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
 
 review_8 = Review.create!(user: user2, office_space: office_5, rating: 4, comment: "Allen Hall 104 Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
+
+puts "creating reservations"
 
 
 reservation1 = Reservation.create!(user: user1, office_space: office_1, check_in: Date.parse("Dec 8 2018"), check_out: Date.parse("Dec 8 2019"), usernumber: 10)
