@@ -9,7 +9,8 @@ class OfficeSpacesController < ApplicationController
       {
         lng: office.longitude,
         lat: office.latitude,
-          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: office }) }
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: office }) },
+          priceWindow: { content: render_to_string(partial: "/office_spaces/price_window", locals: { office: office }) }
           # this takes the html code of the partial and use it on the pop up tag. office instance is passed as
           # a variable to be use in the erb code
       }
@@ -24,8 +25,8 @@ class OfficeSpacesController < ApplicationController
       [{
         lng: @office_space.longitude,
         lat: @office_space.latitude,
-          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: @office_space }) }
-
+          infoWindow: { content: render_to_string(partial: "/office_spaces/map_window", locals: { office: @office_space }) },
+          priceWindow: { content: render_to_string(partial: "/office_spaces/price_window", locals: { office: office }) }
       }]
 
     @review = Review.new
