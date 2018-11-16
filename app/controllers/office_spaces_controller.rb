@@ -93,6 +93,6 @@ class OfficeSpacesController < ApplicationController
   def office_space_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:office_space).permit(:name, :address, :description, :price, :photo, :nearest_station)
+    params.require(:office_space).permit(:name, :address, :description, :price, :photo, :nearest_station, :wifi, :reception, :aircon, :cleaning, :meeting_rooms, :coffee_machine, :cafeteria, :parking)
   end
 end
