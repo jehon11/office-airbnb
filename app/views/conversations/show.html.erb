@@ -1,0 +1,18 @@
+<div style="height: 70px">
+</div>
+<div class="container">
+  <% @conversation.messages.each do |message| %>
+  <ul>
+    <li>
+      <%= message.content %>
+    </li>
+    <li>
+      <%= message.user %>
+    </li>
+  </ul>
+  <% end %>
+  <%= simple_form_for ([@conversation, @message]) do |f| %>
+  <%= f.input :content, label: false, required: false %>
+  <%= f.submit "Send", :class => "btn-treehouse" %>
+  <% end %>
+</div>
