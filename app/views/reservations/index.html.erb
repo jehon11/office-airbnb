@@ -24,6 +24,7 @@
           <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %>
           <button type="button" class="btn btn-danger">Cancel this Reservation</button>
           <% end %>
+          <%= link_to "Message", conversations_path(@conversation, reservation: reservation), method: :post %>
         </div>
       </div>
     </div>
