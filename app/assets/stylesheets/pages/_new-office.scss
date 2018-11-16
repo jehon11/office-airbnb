@@ -1,7 +1,7 @@
 .new-office-banner {
   display: flex;
   height: 200px;
-  background-color: #E3C662;
+  background-color: #E7D28A;
   align-items: center;
   justify-content: center;
   margin-bottom: 150px;
@@ -9,9 +9,11 @@
 
 }
 
-.new-office-banner h1 {
+.new-office-banner h2 {
   color: white;
   text-align: center;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-weight: 500;
 }
 
 .form-new-office {
@@ -21,6 +23,20 @@
 }
 
 .boolean {
-  margin-top: 60px;
+  h4 {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    border-top: 1px solid #E3C662;
+    padding: 10px,
+  }
+}
 
+.price {
+  margin-top: 25px;
+  border-top: 1px solid #E3C662;
+  padding: 20px;
+}
+
+.form-new-office {
+  margin-bottom: 100px;
 }

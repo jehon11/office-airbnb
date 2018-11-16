@@ -1,6 +1,6 @@
 <div class="container-new-office-main">
   <div class="new-office-banner">
-    <h1>Add a office space</h1>
+    <h2>Add An Office Space</h1>
   </div>
   <div class="form-new-office">
     <%= simple_form_for @office_space do |f| %>
@@ -9,28 +9,34 @@
       <%= f.input :address, input_html: {id: "flat_address_2"} %>
     </div>
     <div class="boolean">
-      <h4>List the services available in your office </h2>
-      <div class="boolean-list">
-        <%= f.input :wifi%>
-        <%= f.input :reception%>
-        <%= f.input :aircon%>
-        <%= f.input :cleaning%>
-        <%= f.input :meeting_rooms%>
-        <%= f.input :coffee_machine%>
-        <%= f.input :cafeteria%>
-        <%= f.input :parking%>
+      <h4>Please list the services available in your office </h2>
+    <div class="boolean-list">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.input :wifi%>
+          <%= f.input :reception%>
+          <%= f.input :aircon%>
+          <%= f.input :cleaning%>
+        </div>
+        <div class="col-sm-6">
+          <%= f.input :meeting_rooms%>
+          <%= f.input :coffee_machine%>
+          <%= f.input :cafeteria%>
+          <%= f.input :parking%>
+        </div>
       </div>
     </div>
-    <div class="price">
-      <%= f.input :price%>
-    </div>
-    <div class="photo">
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= button_tag( :class => "button") do %>
-      <i class="fas fa-plus-circle"></i> Make Office Space
-    </div>
-    <% end %>
-    <% end %>
   </div>
+  <div class="price">
+    <%= f.input :price%>
+  </div>
+  <div class="photo">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= button_tag( :class => "button") do %>
+    <i class="fas fa-plus-circle"></i> Make Office Space
+  </div>
+  <% end %>
+  <% end %>
+</div>
 </div>
