@@ -34,6 +34,31 @@
             </ul>
             <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
           </div>
+          <h2>Reviews</h1>
+            <hr>
+          <div class="review-card-container">
+            <div class="row">
+              <% @office_space.reviews.each do |review| %>
+              <div class="col-xs-12">
+                <div class="card-review">
+                  <div class="stars">
+                    <% review.rating.times do %>
+                    <i class="fas fa-star"></i>
+                    <% end %>
+                    <b><%= review.rating  %></b>
+                  </div>
+                  <div class="comment">
+                    <%= review.comment %>
+                  </div>
+                  <div class="review-author">
+                    - <%= review.user.email %>
+                  </div>
+                  <hr class="review-divider">
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
         </div>
         <div class="col-xs-4">
           <div class="form">
@@ -53,26 +78,7 @@
 </div>
 <hr>
 <!-- office review -->
-<div class="container">
-  <h2>Reviews</h1>
-    <div class="card-container">
-      <div class="row">
-        <% @office_space.reviews.each do |review| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="card-review">
-            <div class="stars">
-              <% review.rating.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            </div>
-            <div class="comment">
-              "<%= review.comment %>" - <%= review.user.email  %>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </div>
-    </div>
+
   </div>
   <hr>
 <!-- comment -->
