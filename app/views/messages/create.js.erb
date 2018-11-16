@@ -1,0 +1,20 @@
+function refreshForm(innerHTML) {
+  const new_message = document.getElementById('new_message');
+  new_message.innerHTML = innerHTML;
+}
+
+function addMessage(messageHTML) {
+  const messages = document.getElementById('messages');
+  messages.insertAdjacentHTML('beforeend', messageHTML);
+}
+
+console.log('hello')
+
+<% if @message.errors.any? %>
+console.log("are we getting here? in the if")
+refreshForm('<%= j render partial: "messages/form", locals: { conversation: @conversation, message: @message } %>');
+<% else %>
+addMessage("<%= j render 'messages/show', message: @message %>");
+console.log("are we getting here? in the else")
+refreshForm("<%= j render partial: 'messages/form', locals: { conversation: @conversation, message: Message.new } %>");
+<% end %>
