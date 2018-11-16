@@ -45,8 +45,6 @@
                 <%icon_color = @office_space.wifi ? 'black' : 'grey'%>
                 <div><i class="fas fa-dice-six fa-lg" style="color: <%=icon_color%>"></i></div>
               </div>
-              <!-- # => #<OfficeSpace id: 46, name: "LePetitParis", address: "Shibuya, 東京都, Japan", description: nil, photo: "image/upload/v1542336617/dug3l5g7qpgwxrugnnwt.jpg", nearest_station: nil, price: 30, user_id: 12, created_at: "2018-11-16 02:50:07", updated_at: "2018-11-16 02:50:07", latitude: 35.6645956, longitude: 139.6987107, wifi: false, reception: false, aircon: false, cleaning: false, meeting_rooms: false, coffee_machine: false, cafeteria: false, parking: false>
- -->
               <li>Host:
                 <%= @office_space.owner.email %>
               </li>
