@@ -1,29 +1,36 @@
 <!--  -->
-<div class="banner-reservation" style="width:100%; height: 40vh; background-color:#E7D28A; color: white">
+<div class="banner-reservation" style="width:100%; height: 45vh; background-color:#E7D28A; color: white">
   <div style="text-align:center">
     <h2>All My Reservations</h2>
   </div>
 </div>
 <br>
 <br>
+<br>
 <div class="container">
   <div class="row">
     <% @reservations.each_with_index do |reservation, index| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card">
+      <div class="card card-reservation">
         <div class='image'>
           <%= cl_image_tag reservation.office_space.photo, height: 200, width: 300 %>
-          <%= link_to "", office_space_path(reservation.office_space), class: "card-link"%>
+
+          <div class="cover"><%= link_to "", office_space_path(reservation.office_space), class: "card-link"%></div>
         </div>
         <div class="review-card-description">
-          <h3><%= index+1 %>. <%= reservation.office_space.name %></h3>
+          <h4><%= index+1 %>. <%= reservation.office_space.name %></h4>
           <%= current_user.email %>
           </p>
-          <p>
-            <%= reservation.check_in %><span> <b>until</b> <%= reservation.check_out %></span></p>
-          <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %>
-          <button type="button" class="btn btn-danger">Cancel this Reservation</button>
-          <% end %>
+          <p>check in: <b><%= reservation.check_in %></b> </p>
+          <p>check out: <b><%= reservation.check_out %></b></p>
+          <div class="two-buttons" style="display: flex; justify-content: space-between; padding-top: 20px">
+          <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %><button type="button" class="btn btn-cancel">Cancel</button><% end %>
+          <button type="button" class="btn btn-message">Message</button>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
         </div>
       </div>
     </div>
