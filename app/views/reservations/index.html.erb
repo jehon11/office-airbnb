@@ -25,7 +25,9 @@
           <p>check out: <b><%= reservation.check_out %></b></p>
           <div class="two-buttons" style="display: flex; justify-content: space-between; padding-top: 20px">
           <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %><button type="button" class="btn btn-cancel">Cancel</button><% end %>
+          <%= link_to conversations_path(@conversation, reservation: reservation), method: :post do %>
           <button type="button" class="btn btn-message">Message</button>
+          <% end %>
           </div>
           <br>
           <br>
