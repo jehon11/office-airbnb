@@ -14,8 +14,9 @@
       <div class="card card-reservation">
         <div class='image'>
           <%= cl_image_tag reservation.office_space.photo, height: 200, width: 300 %>
-
-          <div class="cover"><%= link_to "", office_space_path(reservation.office_space), class: "card-link"%></div>
+          <div class="cover">
+            <%= link_to "", office_space_path(reservation.office_space), class: "card-link"%>
+          </div>
         </div>
         <div class="review-card-description">
           <h4><%= index+1 %>. <%= reservation.office_space.name %></h4>
@@ -24,16 +25,16 @@
           <p>check in: <b><%= reservation.check_in %></b> </p>
           <p>check out: <b><%= reservation.check_out %></b></p>
           <div class="two-buttons" style="display: flex; justify-content: space-between; padding-top: 20px">
-          <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %><button type="button" class="btn btn-cancel">Cancel</button><% end %>
-          <%= link_to conversations_path(@conversation, reservation: reservation), method: :post do %>
-          <button type="button" class="btn btn-message">Message</button>
-          <% end %>
+            <%= link_to reservation_path(reservation), method: :delete, data: {confirm: "Are you sure? your host will be very unhappy!"} do %><button type="button" class="btn btn-cancel">Cancel</button>
+            <% end %>
+            <%= link_to conversations_path(@conversation, reservation: reservation), method: :post do %>
+            <button type="button" class="btn btn-message">Message</button>
+            <% end %>
           </div>
           <br>
           <br>
           <br>
-          <br>
-
+          s<br>
         </div>
       </div>
     </div>

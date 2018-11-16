@@ -4,10 +4,17 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.conversation = @conversation
     @message.user = current_user
-    @message.save
     authorize @conversation
     authorize @message
-    redirect_to conversation_path(@conversation)
+    if @message.save
+      # @message = Message.new
+      respond_to do |format|
+        format.js
+        format.html { redirect_to conversation_path(@conversation) }
+      end
+    else
+
+    end
   end
 
   def message_params
