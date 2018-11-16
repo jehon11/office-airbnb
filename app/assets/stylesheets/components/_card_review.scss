@@ -1,0 +1,20 @@
+.card-review {
+  font-size: 15px;
+
+  .stars {
+    margin-bottom: 15px;
+    color: #E3C662;
+  }
+
+  .review-author {
+    margin-top: 10px;
+  }
+
+  .review-divider {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.review-card-container {
+  padding-left: 15px;
+}

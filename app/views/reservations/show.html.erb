@@ -44,7 +44,7 @@
         </p>
         <hr>
         <button id="sweet-alert-reservation" type="button" class="btn-treehouse">Confirm</button>
-        <%= link_to reservation_path(@reservation), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <%= link_to reservation_path(@reservation), method: :delete do %>
         <button type="button" class="btn-treehouse" style="background-color: grey">Cancel</button>
         <% end %>
       </div>
