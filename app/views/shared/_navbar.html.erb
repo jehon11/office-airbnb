@@ -7,7 +7,7 @@
       <% end %>
     </div>
     <div class='navbar-search'>
-      <%= simple_form_for(:office_space, method: :get, url: search_path) do |f| %>
+      <%= simple_form_for(:office_space_search, method: :get, url: search_path) do |f| %>
       <%= f.input :address, label: false, input_html: {id: "flat_address"}, placeholder: "Find a workspace"  %>
     </div>
   </div>
@@ -21,6 +21,7 @@
     <%= link_to "Browse Workspaces", office_spaces_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "My Offices", my_offices_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%= link_to "Reservations", reservations_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Messages", conversations_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -52,7 +53,9 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
-        <li class="navbar-wagon-item"><%= current_user.email %></li>
+        <li class="navbar-wagon-item">
+          <%= current_user.email %>
+        </li>
         <li>
           <%= link_to "Browse Workspaces", office_spaces_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>

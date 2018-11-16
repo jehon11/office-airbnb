@@ -10,6 +10,10 @@
   // padding: 40px;
 }
 
+.card-content-stars {
+  font-size: 12px;
+}
+
 .card-description {
   position: absolute;
   height: 170px;
@@ -19,7 +23,7 @@
   margin-top: 50px;
   margin-left: -150px;
   background-color: white;
-  padding: 30px;
+  padding: 10px 0px 0px 20px;
   box-shadow: 2px 2px 10px 3px #D3D3D3;
   text-decoration: none;
 }
@@ -74,15 +78,6 @@
 }
 
 
-
-
-.card-review {
-  margin: 20px;
-
-  .stars {
-    margin-bottom: 15px;
-  }
-}
 
 // .mask {
 //   height: 300px;

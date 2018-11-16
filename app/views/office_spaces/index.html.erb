@@ -22,6 +22,16 @@
               <h2 style="color: #E3C662">
                 <%= office_space.price %> USD
               </h2>
+              <div class="card-content-stars">
+                <% office_space.stars.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>
+                <% if office_space.half_star == true %>
+                <i class="fas fa-star-half"></i>
+                <% end %>
+                <%= office_space.average_rating  %>
+                <%="(#{office_space.reviews.length} reviews)"%>
+              </div>
             </div>
           </div>
         </div>

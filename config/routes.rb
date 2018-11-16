@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   end
   get 'my_offices', to: 'pages#my_offices', as: :my_offices
   resources :reservations
+  resources :conversations do
+    resources :messages, only: [:create]
+  end
+
 end

@@ -1,0 +1,30 @@
+.office-space-booking-container {
+
+  .booking-details {}
+}
+
+
+.description-form-container {
+  justify-content: space-between;
+
+  .description {
+    margin-right: 10px;
+  }
+
+  .form {
+    flex: 0 0 400px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 25px;
+
+    .price {
+      font-size: 30px;
+    }
+
+    .simple_form {
+      width: 100%;
+    }
+  }
+
+
+}

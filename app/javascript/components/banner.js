@@ -7,6 +7,6 @@ function loadDynamicBannerText() {
     loop: true,
     loopCount: 3
   });
-}
+};
 
 export { loadDynamicBannerText };

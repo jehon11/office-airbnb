@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
     authorize @reservation
     if @reservation.save
-      render :confirm
+      render :show
     else
       render 'office_spaces/show'
     end
@@ -22,13 +22,15 @@ class ReservationsController < ApplicationController
     authorize @reservation
     @reservation.destroy
     if @reservation.user == current_user
-      redirect_to office_spaces_path
+      redirect_to reservations_path
     else
       redirect_to my_offices_path
     end
   end
 
-  def confirm
+  def show
+    @reservation = Reservation.find(params[:id])
+    authorize @reservation
   end
 
   def reservation_params
