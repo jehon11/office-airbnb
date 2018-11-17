@@ -91,45 +91,17 @@ office_12.save!
 
 puts "creating reviews"
 
-review_1 = Review.create!(user: user1, office_space: office_1, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
-review_2 = Review.create!(user: user2, office_space: office_1, rating:3, comment: "very nice : the most pleasant office i have ever seen" )
-
-review_3 = Review.create!(user: user1, office_space: office_2, rating: 2, comment: "The staff were very helpful. When I complained that the office to which we had been initially assigned were noise, they moved me at once. meal was good too." )
-review_4 = Review.create!(user: user2, office_space: office_2, rating: 4, comment: "Great time at this office, good size apartment, perfect location close to skytrain, supermarket and shopping mall." )
-
-review_4 = Review.create!(user: user2, office_space: office_3, rating: 4, comment: "Good views, office windows excellent brilliant views. cafe was good too. Everything that we needed." )
-review_5 = Review.create!(user: user1, office_space: office_3, rating: 5, comment: "Great size office. Nice and clean and tidy. Terrific value. Good location." )
-
-review_6 = Review.create!(user: user1, office_space: office_4, rating: 5, comment: "Great  office. Wonderful and tidy. good colleagues. Good location." )
-review_7 = Review.create!(user: user2, office_space: office_4, rating: 5, comment: "7C Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
-
-review_8 = Review.create!(user: user2, office_space: office_5, rating: 1, comment: "Allen Hall 104 Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
-
-
-
-
-
-review_9 = Review.create!(user: user1, office_space: office_6, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
-review_10 = Review.create!(user: user2, office_space: office_6, rating: 5, comment: "very nice : the most pleasant office i have ever seen" )
-
-review_11 = Review.create!(user: user1, office_space: office_7, rating: 5, comment: "The staff were very helpful. When I complained that the office to which we had been initially assigned were noise, they moved me at once. meal was good too." )
-review_12 = Review.create!(user: user2, office_space: office_7, rating: 3, comment: "Great time at this office, good size apartment, perfect location close to skytrain, supermarket and shopping mall." )
-
-review_13 = Review.create!(user: user2, office_space: office_8, rating: 1, comment: "Good views, office windows excellent brilliant views. cafe was good too. Everything that we needed." )
-review_14 = Review.create!(user: user1, office_space: office_8, rating: 3, comment: "Great size office. Nice and clean and tidy. Terrific value. Good location." )
-
-review_15 = Review.create!(user: user1, office_space: office_9, rating: 5, comment: "Great  office. Wonderful and tidy. good colleagues. Good location." )
-review_16 = Review.create!(user: user2, office_space: office_9, rating: 3, comment: "7C Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
-
-review_17= Review.create!(user: user2, office_space: office_10, rating: 3, comment: "Allen Hall 104 Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
-
-review_18 = Review.create!(user: user1, office_space: office_11, rating: 3, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
-review_19 = Review.create!(user: user2, office_space: office_11, rating: 5, comment: "very nice : the most pleasant office i have ever seen" )
-
-review_20 = Review.create!(user: user1, office_space: office_12, rating: 5, comment: "The staff were very helpful. When I complained that the office to which we had been initially assigned were noise, they moved me at once. meal was good too." )
-review_21 = Review.create!(user: user2, office_space: office_12, rating: 5, comment: "Great time at this office, good size apartment, perfect location close to skytrain, supermarket and shopping mall." )
-
-
+OfficeSpace.all.each do |office|
+Review.create!(user: user1, office_space: office, rating: 4, comment: "The office was well maintained and had all that I was promised. The space was adequate as expected from the description and most importantly there was peace and quite that I wanted." )
+Review.create!(user: user2, office_space: office, rating: 3, comment: "very nice : the most pleasant office i have ever seen" )
+Review.create!(user: user1, office_space: office, rating: 2, comment: "The staff were very helpful. When I complained that the office to which we had been initially assigned were noise, they moved me at once. meal was good too." )
+Review.create!(user: user2, office_space: office, rating: 4, comment: "Great time at this office, good size apartment, perfect location close to skytrain, supermarket and shopping mall." )
+Review.create!(user: user2, office_space: office, rating: 4, comment: "Good views, office windows excellent brilliant views. cafe was good too. Everything that we needed." )
+Review.create!(user: user1, office_space: office, rating: 5, comment: "Great size office. Nice and clean and tidy. Terrific value. Good location." )
+Review.create!(user: user1, office_space: office, rating: 5, comment: "Great  office. Wonderful and tidy. good colleagues. Good location." )
+Review.create!(user: user2, office_space: office, rating: 5, comment: "7C Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
+Review.create!(user: user2, office_space: office, rating: 1, comment: "Allen Hall 104 Roe Ave propose several wonderful offices in Japan. It is mostly used by local business travelers. Everything is superb clean." )
+end
 
 
 

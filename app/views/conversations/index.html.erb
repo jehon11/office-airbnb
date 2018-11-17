@@ -5,11 +5,11 @@
     <h1>My Messages</h1>
     <% @conversations.each do |conversation| %>
     <div class="message-card">
+      <p>
+        <b><%= conversation.reservation.office_space.name %></b>
+      </p>
       <li>
         Host:
-        <%= conversation.reservation.office_space.name %>
-      </li>
-      <li>
         <%= link_to conversation.reservation.office_space.owner.email, conversation_path(conversation) %>
       </li>
       <li>

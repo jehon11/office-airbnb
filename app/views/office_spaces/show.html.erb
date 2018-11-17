@@ -23,7 +23,7 @@
               <li>
                 <%= @office_space.description %>
               </li>
-              <br>
+              <hr>
               <div class='icon_display'>
                 <%icon_color = @office_space.coffee_machine ? 'black' : 'lightgrey'%>
                 <div><i class="fas fa-coffee fa-lg" style="color:<%=icon_color%>"></i></div>
@@ -44,6 +44,7 @@
                 <%icon_color = @office_space.meeting_rooms ? 'black' : 'lightgrey'%>
                 <div><i class="fas fa-dice-six fa-lg" style="color: <%=icon_color%>"></i></div>
               </div>
+              <hr>
               <li>Host:
                 <%= @office_space.owner.email %>
               </li>
