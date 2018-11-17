@@ -3,6 +3,7 @@
 <div class="container">
   <div class="conversation-container">
     <h1>My Messages</h1>
+    <hr>
     <% @conversations.each do |conversation| %>
     <div class="message-card">
       <p>
@@ -18,4 +19,7 @@
     </div>
     <% end %>
   </div>
+  <% if @conversations.first.nil? %>
+  <h4>You have no messages</h4>
+  <% end %>
 </div>

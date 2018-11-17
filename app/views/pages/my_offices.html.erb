@@ -70,4 +70,14 @@
   </div>
   <hr>
   <% end %>
+  <% if @office_spaces.first.nil? %>
+  <h4> You have no offices :(</h4>
+  <hr>
+  <h2 class="text-center" style="margin-bottom: 30px">List your Space</h2>
+  <div class="text-center">
+    <%= link_to new_office_space_path do %>
+    <button type="button" class="btn-treehouse">List your Space</button>
+    <% end %>
+  </div>
+  <% end %>
 </div>
