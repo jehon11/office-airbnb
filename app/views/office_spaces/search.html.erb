@@ -2,32 +2,39 @@
   <div style="height: 70px">
   </div>
   <div class="search-result-container">
-    <div class="search-result-cards-container">
-      <p class="search-term">Searching for workspaces in
-        <b><%= @params %></b>
-        <%="(#{@office_spaces.length} results)"%>
-      </p>
-      <div class="row">
-        <% @office_spaces.each do |office_space| %>
-        <div class="col-xs-12 col-sm-6 text-center">
-          <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
-            <!--            <div class="card-category"></div> -->
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= ["jehon11", "Labiyv", "shuomazurkas", "SylvainAZ"].sample %>">
-            <div class="card-description">
-              <%= link_to "", office_space_path(office_space), class: "card-link"%>
-              <h5><%= office_space.name %></h5>
-              <p>
-                <%= office_space.address %>
-              </p>
-              <h2 style="color: #E3C662">
+    <div class="row">
+      <div class="col-xs-7">
+        <div class="search-result-cards-container">
+          <p class="search-term">Searching for workspaces in
+            <b><%= @params %></b>
+            <%="(#{@office_spaces.length} results)"%>
+          </p>
+          <div class="row">
+            <% @office_spaces.each do |office_space| %>
+            <div class="col-xs-12 col-sm-6 text-center">
+              <div class="card" style="background-image: url('<%= cl_image_path office_space.photo, height: 500, width: 400, crop: :fill %>');">
+                <!--            <div class="card-category"></div> -->
+                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= ["jehon11", "Labiyv", "shuomazurkas", "SylvainAZ"].sample %>">
+                <div class="card-description">
+                  <%= link_to "", office_space_path(office_space), class: "card-link"%>
+                  <h5><%= office_space.name %></h5>
+                  <p>
+                    <%= office_space.address %>
+                  </p>
+                  <h2 style="color: #E3C662">
                 <%= office_space.price %> USD
               </h2>
+                </div>
+              </div>
             </div>
+            <% end %>
           </div>
         </div>
-        <% end %>
+      </div>
+      <div class="col-xs-6 col-xs-offset-7" style="position:fixed">
+        <div id="map" , data-markers="<%= @markers.to_json %>">
+        </div>
       </div>
     </div>
-    <div id="map" , data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>
